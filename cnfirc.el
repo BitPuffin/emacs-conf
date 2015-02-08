@@ -16,7 +16,7 @@
 				 (with-current-buffer buf
 					 (when (eq process (rcirc-buffer-process))
 						 (remove-hook 'change-major-mode-hook
-													'rcirc-change-major-mode-hook)
+							            'rcirc-change-major-mode-hook)
 						 (if (rcirc-channel-p rcirc-target)
 							 (setq channels (cons rcirc-target channels))
 							 (setq query-buffers (cons buf query-buffers))))))
