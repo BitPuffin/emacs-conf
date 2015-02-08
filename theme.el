@@ -3,5 +3,9 @@
 ;;;
 
 (load-theme 'wombat t)
-(set-face-attribute 'default nil :font "DejaVu Sans Mono-8")
+
+; Retina
+(if (eq system-type 'darwin)
+	(set-face-attribute 'default nil :font "DejaVu Sans Mono-16")
+	(set-face-attribute 'default nil :font "DejaVu Sans Mono-8"))
 
