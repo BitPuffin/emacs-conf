@@ -18,13 +18,13 @@
 						 (remove-hook 'change-major-mode-hook
 													'rcirc-change-major-mode-hook)
 						 (if (rcirc-channel-p rcirc-target)
-								 (setq channels (cons rcirc-target channels))
+							 (setq channels (cons rcirc-target channels))
 							 (setq query-buffers (cons buf query-buffers))))))
 			 (delete-process process)
 			 (rcirc-connect server port nick
-											rcirc-default-user-name
-											rcirc-default-full-name
-											channels))))
+			                rcirc-default-user-name
+			 	              rcirc-default-full-name
+			                channels))))
 
 (require 'rcirc)
 
@@ -47,25 +47,25 @@
 (rcirc-track-minor-mode t)
 (setq rcirc-server-alist
       '(("irc.freenode.net" :channels ("#nim"
-																			 "#nim-offtopic"
-																			 "#Maratis"
-																			 "##OpenGL"
-																			 "#haiku"
-																			 "#crux"
-																			 "#kxstudio"
-																			 "#verse"
-																			 "#allegro"
-																			 "#lisp"
-																			 "#ocaml"
-																			 "#idris"
-																			 "#emacs"
-																			 "#yig"
-																			 "#d"
-																			 "#neo3d"
-																			 "#plan9"))
+                                       "#nim-offtopic"
+                                       "#Maratis"
+                                       "##OpenGL"
+                                       "#haiku"
+                                       "#crux"
+                                       "#kxstudio"
+                                       "#verse"
+                                       "#allegro"
+                                       "#lisp"
+                                       "#ocaml"
+                                       "#idris"
+                                       "#emacs"
+                                       "#yig"
+                                       "#d"
+                                       "#neo3d"
+                                       "#plan9"))
         ("irc.quakenet.org" :channels ("#londonindies"))
         ("irc.mozilla.org"  :channels ("#rust"))
         ("irc.esper.net"    :channels ("#TIGirc"))
         ("irc.afternet.org" :channels ("#ludumdare"
-																			 "#ludumbeer"
-																			 "#ludumdare.se"))))
+                                       "#ludumbeer"
+                                       "#ludumdare.se"))))
