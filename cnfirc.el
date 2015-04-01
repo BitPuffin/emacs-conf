@@ -1,71 +1,61 @@
 ;;;
-;;; My rcirc configuration
+;;; My irc configuration
 ;;;
 
-(eval-after-load 'rcirc
-	'(defun-rcirc-command reconnect (arg)
-		 "Reconnect the server process."
-		 (interactive "i")
-		 (unless process
-			 (error "There's no process for this target"))
-		 (let* ((server (car (process-contact process)))
-						(port (process-contact process :service))
-						(nick (rcirc-nick process))
-						channels query-buffers)
-			 (dolist (buf (buffer-list))
-				 (with-current-buffer buf
-					 (when (eq process (rcirc-buffer-process))
-						 (remove-hook 'change-major-mode-hook
-							            'rcirc-change-major-mode-hook)
-						 (if (rcirc-channel-p rcirc-target)
-							 (setq channels (cons rcirc-target channels))
-							 (setq query-buffers (cons buf query-buffers))))))
-			 (delete-process process)
-			 (rcirc-connect server port nick
-			                rcirc-default-user-name
-			 	              rcirc-default-full-name
-			                channels))))
+(require 'circe)
 
-(require 'rcirc)
-
-;; Not gonna show you my password scrub!
+(defvar my-irc-nick     "BitPuffin")
+(defvar my-irc-username "BitPuffin")
 (load "irccred")
-(setq rcirc-default-nick "BitPuffin")
-(setq rcirc-default-user-name "BitPuffin")
-(setq rcirc-default-full-name "Isak Andersson")
-(setq rcirc-authinfo
-      '(("freenode" nickserv rcirc-default-user-name my-rcirc-password)
-        ("quakenet" nickserv rcirc-default-user-name my-rcirc-password)
-        ("esper"    nickserv rcirc-default-user-name my-rcirc-password)
-        ("mozilla"  nickserv rcirc-default-user-name my-rcirc-password)))
 
-(add-hook 'rcirc-mode-hook
-	(lambda ()
-		(set (make-local-variable 'scroll-conservatively)
-		 8192)))
-(setq rcirc-log-flag t)
-(rcirc-track-minor-mode t)
-(setq rcirc-server-alist
-      '(("irc.freenode.net" :channels ("#nim"
-                                       "#nim-offtopic"
-                                       "#Maratis"
-                                       "##OpenGL"
-                                       "#haiku"
-                                       "#crux"
-                                       "#kxstudio"
-                                       "#verse"
-                                       "#allegro"
-                                       "#lisp"
-                                       "#ocaml"
-                                       "#idris"
-                                       "#emacs"
-                                       "#yig"
-                                       "#d"
-                                       "#neo3d"
-                                       "#plan9"))
-        ("irc.quakenet.org" :channels ("#londonindies"))
-        ("irc.mozilla.org"  :channels ("#rust"))
-        ("irc.esper.net"    :channels ("#TIGirc"))
-        ("irc.afternet.org" :channels ("#ludumdare"
-                                       "#ludumbeer"
-                                       "#ludumdare.se"))))
+(add-to-list 'circe-networks '("Afternet" :host "irc.afternet.org" :port (6667 . 6697)))
+(add-to-list 'circe-networks '("Quakenet" :host "irc.quakenet.org" :port (6667 . 6697)))
+(add-to-list 'circe-networks '("Esper" :host "irc.esper.net"       :port (6667 . 6697)))
+
+(setq circe-network-options
+      `(("Freenode"
+         :nick ,my-irc-nick
+         :channels ("#nim"
+                    "#nim-offtopic"
+                    "#Maratis"
+                    "##OpenGL"
+                    "#haiku"
+                    "#crux"
+                    "#kxstudio"
+                    "#verse"
+                    "#allegro"
+                    "#lisp"
+                    "#ocaml"
+                    "#idris"
+                    "#emacs"
+                    "#yig"
+                    "#d"
+                    "#neo3d"
+                    "#plan9")
+         :nickserv-password ,my-irc-password)
+        ("Quakenet"
+         :nick ,my-irc-nick
+         :channels ("#londonindies")
+         :nickserv-password ,my-irc-password)
+        ("Esper"
+         :nick ,my-irc-nick
+         :channels ("#TIGirc")
+         :nickserv-password ,my-irc-password)
+        ("Afternet"
+         :user ,my-irc-username
+         :pass ,my-irc-password
+         :nick ,my-irc-nick
+         :channels ("#ludumdare" "#ludumbeer" "#ludumdare.se #ludumdota"))))
+
+(defun start-irc ()
+  "Connect to IRC"
+  (interactive)
+  (circe "Freenode")
+  (circe "Quakenet")
+  (circe "Esper")
+  (circe "Afternet"))
+
+(load "lui-logging" nil t)
+(enable-lui-logging-globally)
+
+(setq tracking-most-recent-first t)
