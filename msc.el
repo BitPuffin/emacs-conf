@@ -17,3 +17,6 @@
     (add-to-list 'exec-path "C:\\"))
 
 (setq-default buffer-file-coding-system 'utf-8-unix)
+
+(global-unset-key (kbd "C-x C-c"))
+(global-set-key (kbd "C-x x") 'save-buffers-kill-terminal)
