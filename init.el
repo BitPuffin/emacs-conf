@@ -23,3 +23,5 @@
 (load "cnfboo")
 (load "cnfel")
 (load "cnflispmode")
+(load "cnfcompile")
+(load "cnfrkt")
