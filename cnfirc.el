@@ -35,7 +35,9 @@
                     "#plan9"
                     "##dale"
                     "#higgsjs"
-                    "#lua")
+                    "#lua"
+                    "#compilers"
+                    "##parsers")
          :nickserv-password ,my-irc-password)
         ("Quakenet"
          :nick ,my-irc-nick
