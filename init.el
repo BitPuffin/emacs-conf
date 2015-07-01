@@ -25,3 +25,4 @@
 (load "cnflispmode")
 (load "cnfcompile")
 (load "cnfrkt")
+(load "cnfdale")

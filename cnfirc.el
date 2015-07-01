@@ -10,7 +10,8 @@
 
 (add-to-list 'circe-networks '("Afternet" :host "irc.afternet.org" :port (6667 . 6697)))
 (add-to-list 'circe-networks '("Quakenet" :host "irc.quakenet.org" :port (6667 . 6697)))
-(add-to-list 'circe-networks '("Esper" :host "irc.esper.net"       :port (6667 . 6697)))
+(add-to-list 'circe-networks '("Esper"    :host "irc.esper.net"    :port (6667 . 6697)))
+(add-to-list 'circe-networks '("Mozilla"  :host "irc.mozilla.org"  :port (6667 . 6697)))
 
 (setq circe-network-options
       `(("Freenode"
@@ -31,7 +32,10 @@
                     "#yig"
                     "#d"
                     "#neo3d"
-                    "#plan9")
+                    "#plan9"
+                    "##dale"
+                    "#higgsjs"
+                    "#lua")
          :nickserv-password ,my-irc-password)
         ("Quakenet"
          :nick ,my-irc-nick
@@ -45,8 +49,10 @@
          :user ,my-irc-username
          :pass ,my-irc-password
          :nick ,my-irc-nick
-         :channels ("#ludumdare" "#ludumbeer" "#ludumdare.se #ludumdota"))))
-
+         :channels ("#ludumdare" "#ludumbeer" "#ludumdare.se #ludumdota"))
+        ("Mozilla"
+         :nick ,my-irc-nick
+         :channels ("#rust"))))
 (defun start-irc ()
   "Connect to IRC"
   (interactive)
