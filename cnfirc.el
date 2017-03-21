@@ -69,7 +69,7 @@
   (circe "Quakenet")
   (circe "Esper")
   (circe "Afternet")
-  (circe "Mozilla")
+  (circe "Mozilla"))
 
 (load "lui-logging" nil t)
 (enable-lui-logging-globally)
