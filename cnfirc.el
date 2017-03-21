@@ -37,7 +37,14 @@
                     "#higgsjs"
                     "#lua"
                     "#compilers"
-                    "##parsers")
+                    "##parsers"
+                    "#boo"
+                    "#hedgewars"
+                    "#minix"
+                    "#sbcl"
+                    "#ccl"
+                    "#racket"
+                    "#scheme")
          :nickserv-password ,my-irc-password)
         ("Quakenet"
          :nick ,my-irc-nick
@@ -54,14 +61,15 @@
          :channels ("#ludumdare" "#ludumbeer" "#ludumdare.se #ludumdota"))
         ("Mozilla"
          :nick ,my-irc-nick
-         :channels ("#rust"))))
+         :channels ("#rust" "#redox"))))
 (defun start-irc ()
   "Connect to IRC"
   (interactive)
   (circe "Freenode")
   (circe "Quakenet")
   (circe "Esper")
-  (circe "Afternet"))
+  (circe "Afternet")
+  (circe "Mozilla")
 
 (load "lui-logging" nil t)
 (enable-lui-logging-globally)
