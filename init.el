@@ -2,6 +2,7 @@
 ;;; Main file for my emacs config
 ;;;
 
+(load "cnfcustom")
 (load "pkgs")
 (load "bell")
 (load "indentation")
