@@ -7,7 +7,7 @@
  '(cursor-type (quote box))
  '(package-selected-packages
    (quote
-    (browse-kill-ring smart-region ido-at-point darcsum geiser adoc-mode julia-shell julia-mode nim-mode fsharp-mode csv-mode rust-mode paredit racket-mode circe twittering-mode switch-window sml-mode smex slime lua-mode actionscript-mode)))
+    (visual-regexp browse-kill-ring smart-region ido-at-point darcsum geiser adoc-mode julia-shell julia-mode nim-mode fsharp-mode csv-mode rust-mode paredit racket-mode circe twittering-mode switch-window sml-mode smex slime lua-mode actionscript-mode)))
  '(safe-local-variable-values (quote ((rust-indent-offset . 2)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
