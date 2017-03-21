@@ -28,3 +28,4 @@
 (load "cnfcompile")
 (load "cnfrkt")
 (load "cnfdale")
+(load "cnfmagit")
