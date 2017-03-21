@@ -2,4 +2,5 @@
 ;;; Fuck off bell
 ;;;
 
-(setq visible-bell t)
+(setq visible-bell nil)
+(setq ring-bell-function 'ignore)
