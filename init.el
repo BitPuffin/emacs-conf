@@ -9,6 +9,7 @@
 (load "theme")
 (load "killbloat")
 (load "wind")
+(load "cnfbufmove")
 (load "fullscr")
 (load "modeln")
 (load "cfix")
