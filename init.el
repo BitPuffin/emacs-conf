@@ -29,3 +29,4 @@
 (load "cnfrkt")
 (load "cnfdale")
 (load "cnfmagit")
+(load "cnfvisreg")
