@@ -44,7 +44,8 @@
                     "#sbcl"
                     "#ccl"
                     "#racket"
-                    "#scheme")
+                    "#scheme"
+                    "#mooltipass")
          :nickserv-password ,my-irc-password)
         ("Quakenet"
          :nick ,my-irc-nick
