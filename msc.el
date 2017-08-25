@@ -19,3 +19,5 @@
 
 (global-unset-key (kbd "C-x C-c"))
 ;(global-set-key (kbd "C-x x") 'save-buffers-kill-terminal)
+
+(global-set-key (kbd "<f1>") 'smex)
