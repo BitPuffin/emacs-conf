@@ -30,3 +30,4 @@
 (load "cnfdale")
 (load "cnfmagit")
 (load "cnfvisreg")
+(load "cnfbinds")
