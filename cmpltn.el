@@ -9,5 +9,7 @@
 (setq ido-everywhere t)
 (ido-mode t)
 (global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "<f1>") 'smex)
+
 
 (ido-at-point-mode)
