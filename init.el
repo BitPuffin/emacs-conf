@@ -25,6 +25,7 @@
 (load "cnfboo")
 (load "cnfel")
 (load "cnflispmode")
+(load "cnfschememode")
 (load "cnfrkt")
 (load "cnfdale")
 (load "cnfmagit")
