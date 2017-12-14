@@ -3,5 +3,5 @@
 ;;;
 
 (add-hook 'lisp-mode-hook
-					(lambda ()
-						(setq-local indent-tabs-mode nil)))
+          (lambda ()
+            (setq-local indent-tabs-mode nil)))
