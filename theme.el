@@ -2,7 +2,8 @@
 ;;; Set theme
 ;;;
 
-(load-theme 'wombat t)
+(load-theme 'doom-dracula t)
+
 
 ; Retina
 (if (eq system-type 'darwin)
